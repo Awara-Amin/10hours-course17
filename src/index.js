@@ -5,30 +5,38 @@ import ReactDom from "react-dom";
 import "./index.css";
 
 // setup vars
-const author = "Amelia ...";
-const title = "I love you to the Moon and Back";
-const img = "https://images-na.ssl-images-amazon.com/images/I/81eB+7+CkUL.jpg";
+//  building an object
+const firstBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/81eB+7+CkUL.jpg",
+  title: "I love you to the Moon and Back",
+  author: "Amelia ..."
+};
+
+// const author = "Amelia ...";
+// const title = "I love you to the Moon and Back";
+// const img = "https://images-na.ssl-images-amazon.com/images/I/81eB+7+CkUL.jpg";
 
 function BookList() {
   return (
     <section className="booklist">
-      <Book job="developer" />
+      <Book img={firstBook.img} />
 
       <Book title="random work" number={33} />
     </section>
   );
 }
 
-const Book = (props) => {
-  console.log(props);
+const Book = (propsOrWhatEver) => {
+  console.log(propsOrWhatEver);
+
   return (
     <article className="book">
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h3>{author}</h3>
-      <p>{props.job}</p>
-      <p>{props.title}</p>
-      <p>{props.number}</p>
+      <p>{propsOrWhatEver.job}</p>
+      <p>{propsOrWhatEver.title}</p>
+      <p>{propsOrWhatEver.number}</p>
     </article>
   );
 };
